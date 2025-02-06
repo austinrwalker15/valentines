@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8c8d2; /* Light pink background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    cursor: url('heart-cursor.png'), auto; /* Custom heart cursor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensure content flows vertically */
+    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Ensure it fills the height on smaller screens */
+    text-align: center;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    box-sizing: border-box; /* Ensure padding/margin is included in height calculation */
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title and Sub-title */
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ff6f61;
+}
+
+/* Title */
+.title {
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+/* Sub-title */
+.sub-title {
+    font-size: 1.5em;
+    color: #ff9aa2;
+    margin-bottom: 50px;
+}
+
+/* Heart Shape */
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin: 20px auto; /* Center the heart */
+}
+
+#heart:before, #heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Love Message Section */
+.love-message {
+    font-size: 2em;
+    color: #c97d6e;
+    margin: 30px 0;
+}
+
+/* CTA Button */
+.cta button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0; /* Ensure space around the button */
+}
+
+.cta button:hover {
+    background-color: #ff4e43;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; /* To wrap the images properly */
+    gap: 20px;
+}
+
+/* Image styles */
+footer img {
+    width: 400px; /* Make images 400px wide */
+    height: auto;
+    margin: 10px;
+    max-width: 100%; /* Prevent images from exceeding the container size */
+}
