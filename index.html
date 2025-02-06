@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8c8d2; /* Light pink background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            cursor: url('heart-cursor.png'), auto; /* Custom heart cursor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Ensure content flows vertically */
+            height: 100vh; /* Full viewport height */
+            min-height: 100vh; /* Ensure it fills the height on smaller screens */
+            text-align: center;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            box-sizing: border-box; /* Ensure padding/margin is included in height calculation */
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Title and Sub-title */
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6f61;
+        }
+
+        /* Title */
+        .title {
+            font-size: 3em;
+            margin-top: 20px;
+            padding: 0 10px; /* Ensure title is properly spaced on small screens */
+        }
+
+        /* Sub-title */
+        .sub-title {
+            font-size: 1.5em;
+            color: #ff9aa2;
+            margin-bottom: 50px;
+            padding: 0 10px; /* Ensure sub-title is properly spaced on small screens */
+        }
+
+        /* Heart Shape */
+        #heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            margin: 20px auto; /* Center the heart */
+        }
+
+        #heart:before, #heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        #heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        /* Love Message Section */
+        .love-message {
+            font-size: 2em;
+            color: #c97d6e;
+            margin: 30px 0;
+            padding: 0 10px; /* Ensure message fits on small screens */
+        }
+
+        /* CTA Button */
+        .cta button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0; /* Ensure space around the button */
+            width: auto;
+        }
+
+        .cta button:hover {
+            background-color: #ff4e43;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #aaa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap; /* To wrap the images properly */
+            gap: 20px;
+        }
+
+        /* Image styles */
+        footer img {
+            width: 400px; /* Make images 400px wide */
+            height: auto;
+            margin: 10px;
+            max-width: 100%; /* Prevent images from exceeding the container size */
+        }
+
+        /* Heart Shape */
+        #heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            margin: 20px auto; /* Center the heart */
+        }
+
+        #heart:before, #heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        #heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        /* Media Queries for Mobile */
+        @media screen and (max-width: 768px) {
+            .title {
+                font-size: 2.5em;
+            }
+
+            .sub-title {
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+
+            .cta button {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+
+            .love-message {
+                font-size: 1.5em;
+                margin: 20px 0;
+            }
+
+            footer img {
+                width: 300px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .title {
+                font-size: 2em;
+                margin-top: 10px;
+            }
+
+            .sub-title {
+                font-size: 1em;
+            }
+
+            .cta button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            .love-message {
+                font-size: 1.2em;
+            }
+
+            footer img {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="title">Will you be my Valentine?</h1>
+        <p class="sub-title">I love you so much</p>
+    </header>
+
+    <section class="heart-animation">
+        <div id="heart"></div> <!-- Heart shape -->
+    </section>
+
+    <section class="message">
+        <h2 class="love-message">" 3 Valentines day and counting loving you."</h2>
+    </section>
+
+    <section class="cta">
+        <button onclick="generateLoveMessage()">Yes!</button>
+        <button onclick="generateNoMessage()">No!</button> <!-- No button added here -->
+    </section>
+
+    <footer>
+        <img src="a.png.jpeg" alt="Image A">
+        <img src="b.png.jpeg" alt="Image B">
+        <img src="c.png.jpeg" alt="Image C">
+    </footer>
+</div>
+
+<script>
+    function generateLoveMessage() {
+        alert("");
+    }
+
+    // Function for the No button
+    function generateNoMessage() {
+        alert("why are you reading this?????>?");
+    }
+</script>
+</body>
+</html>
